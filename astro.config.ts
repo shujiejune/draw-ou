@@ -2,15 +2,18 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math"; 
+import remarkMath from "remark-math";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -18,6 +21,7 @@ export default defineConfig({
     react(),
     sitemap(),
   ],
+
   markdown: {
     remarkPlugins: [
       remarkMath,
@@ -36,13 +40,19 @@ export default defineConfig({
       wrap: true,
     },
   },
+
   vite: {
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
   },
+
   scopedStyleStrategy: "where",
+
   experimental: {
     contentLayer: true,
   },
+
+  output: "server",
+  adapter: vercel(),
 });
