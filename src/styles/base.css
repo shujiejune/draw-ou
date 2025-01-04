@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -101,9 +102,22 @@
   blockquote {
     word-wrap: break-word;
   }
+  code {
+    font-family: "Fira Code", monospace !important;
+    font-size: 0.875rem !important;
+    line-height: 0.5 !important;
+  }
 
   pre > code {
     white-space: pre;
+    font-family: "Fira Code", monospace !important;
+    font-size: 0.875rem !important;
+    line-height: 0.5 !important;
+  }
+
+  /* ===== Block Equations ===== */
+  .katex-display {
+    color: var(--color-text-base) !important;
   }
 
   /* Apply Dark Theme (if multi-theme specified) */

@@ -8,6 +8,7 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
+import { slugifyStr } from "@utils/slugify";
 import { SITE, SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
@@ -42,7 +43,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        Now the color of the sky is tropical yeah  |  精神如太阳，霍然照清都。
+        Now the color of the sky is tropical yeah | 精神如太阳，霍然照清都。
       </p>
       {
         // only display if at least one social link is enabled
@@ -63,9 +64,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <section id="featured">
             <h2>Featured</h2>
             <ul>
-              {featuredPosts.map(({ data, slug }) => (
+              {featuredPosts.map(({ data }) => (
                 <Card
-                  href={`/posts/${slug}/`}
+                  href={
+                    `/posts/${data.slug}/` ||
+                    `/posts/${slugifyStr(data.title)}/`
+                  }
                   frontmatter={data}
                   secHeading={false}
                 />
@@ -83,10 +87,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
-              ({ data, slug }, index) =>
+              ({ data }, index) =>
                 index < SITE.postPerIndex && (
                   <Card
-                    href={`/posts/${slug}/`}
+                    href={
+                      `/posts/${data.slug}/` ||
+                      `/posts/${slugifyStr(data.title)}/`
+                    }
                     frontmatter={data}
                     secHeading={false}
                   />
