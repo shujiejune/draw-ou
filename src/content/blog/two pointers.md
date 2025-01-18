@@ -1,14 +1,15 @@
 ---
 pubDatetime: 2025-01-18T11:01:54Z
-title: Coding Patterns: Two Pointers
+title: Coding Patterns | Two Pointers
 slug: two-pointers
 featured: false
 draft: false
 tags:
   - learning
   - coding patterns
-description:
-  Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target. 
+description: |
+  Given an array of sorted numbers and a target sum, 
+  find a pair in the array whose sum is equal to the given target.
 ---
 
 # Coding Patterns: Two Pointers
