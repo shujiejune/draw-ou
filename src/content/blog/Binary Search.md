@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2025-06-12T17:07:23
-title: binary Search
+title: Binary Search
 slug: binary-search
 featured: false
 draft: false
