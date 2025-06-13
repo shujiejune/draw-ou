@@ -47,6 +47,8 @@ Assumptions
 
 There can be duplicate elements in the array.
 
+Solutions
+
 ```cpp
 public int smallestElementLargerThanTarget(int[] array, int target) {
     if (array == null || array.length == 0) {
@@ -75,6 +77,8 @@ Given a target integer T and an integer array A sorted in ascending order, find 
 Assumptions
 
     There can be duplicate elements in the array, and we can return any of the indices with same value.
+
+Solutions
 
 ```cpp
 public int closest(int[] array, int target) {
@@ -118,6 +122,8 @@ Assumptions
 Return
 
     A size K integer array containing the K closest numbers(not indices) in A, sorted in ascending order by the difference between the number and T.
+
+Solutions
 
 ```cpp
 public int[] kClosest(int[] array, int target, int k) {
@@ -183,6 +189,8 @@ Assumptions
     dictionary A is not null
     dictionary.get(i) will return null(Java)/INT_MIN(C++)/None(Python) if index i is out of bounds
 
+Solutions
+
 ```cpp
 public int search(Dictionary dict, int target) {
     if (target < dict.get(0)) {
@@ -221,6 +229,8 @@ A bitonic array is a combination of two sequence: the first sequence is a monoto
 Assumptions:
 
     The array is not null.
+
+Solutions
 
 ```cpp
 // clarification: 
