@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-01-06T18:00:54Z
-title: Why I quit phd and swtched to CS
+title: Why I quit phd and switched to CS
 slug: career-switch
 featured: false
 draft: false
